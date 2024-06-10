@@ -3,9 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Daily Mail</title>
 </head>
 <body>
-    testing for hosting
+    <Form name="form1">
+        <legend>로그인</legend>
+            이름: <input type="text" name="name1">
+            비밀번호: <input type="text" name="pw">
+            <button type="buttion" value="Log In" onclick="test()">Log in</button>
+    </Form>
+    <script>
+        var userName;
+        var userPW;
+        const input = document.querySelectorAll("input");
+        input[0].addEventListener("input", updateValue1);
+        function updateValue1(e) {
+            console.log(e.target.value);
+            userName = e.target.value;
+            check();
+        }
+        input[1].addEventListener("input", updateValue2);
+        function updateValue2(e) {
+            userPW = e.target.value;
+            check();
+        }
+        function check(){
+            if (userName == '홍채영'&&userPW == '0607'){
+                console.log('correct');
+                window.location.replace('index');
+            } else {
+                console.log('none');
+            }
+        }
+    </script>
 </body>
 </html>
